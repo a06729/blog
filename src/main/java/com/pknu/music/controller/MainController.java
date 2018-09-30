@@ -57,7 +57,7 @@ public class MainController {
 							 @RequestParam("authority")String authority,
 							 @RequestParam("email")String email,
 							 @RequestParam("enabled")String enabled) {
-		String dbpw=encoder.encoding(pw);
+		String dbpw=encoder.encoding(pw,id);
 		
 		Map<String,String>paramMap=new HashMap<String,String>();
 		paramMap.put("id",id);

@@ -16,8 +16,7 @@
 	
 	<http pattern="/resources/**" security="none"></http>
 	
-	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="/insertPage" access="hasRole('ROLE_USER')"/>
+	<http auto-config="true" use-expressions="true" create-session="never">
 		<intercept-url pattern="/**" access="permitAll"/>
 		<form-login
 			login-page="/loginPage"
@@ -28,7 +27,7 @@
 			password-parameter="userPw"
 			authentication-failure-url="/loginfail"
 		/>
-		<logout logout-success-url="/loginPage"/>
+		<logout logout-success-url="/loginPage" logout-url="/logout"/>
 		<session-management invalid-session-url="/loginPage">
 			<concurrency-control max-sessions="1" expired-url="/loginPage"/>
 		</session-management>
@@ -38,16 +37,20 @@
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource" id="userService"
 				users-by-username-query="select USERID AS userId,userpw AS userPw , 1 AS enabled 
-					FROM users WHERE USERID=?"
+ 					FROM users WHERE USERID=?" 
 				authorities-by-username-query="SELECT USERID AS userid,
 				CASE WHEN ENABLED=0 THEN 'ROLE_ADMIN' ELSE 'ROLE_USER' END authority FROM users WHERE USERID=?"
 			/>
 		</authentication-provider>
 	</authentication-manager>
 	
+	
 	<authentication-manager>
 		<authentication-provider user-service-ref="userService">
-			<password-encoder ref="passwordEncoder"></password-encoder>
+			<password-encoder ref="passwordEncoder">
+			<salt-source user-property="username"/>
+			</password-encoder>
+			
 		</authentication-provider>
 	</authentication-manager>
 	
