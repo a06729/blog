@@ -4,7 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class BoardFileDto {
 	private String fileNum;
-	private String boardNum;
+	private int boardNum;
 	private String orignal_File_Name;
 	private String stored_File_Name;
 	private String file_Size;
@@ -26,11 +26,11 @@ public class BoardFileDto {
 		this.fileNum = fileNum;
 	}
 
-	public String getBoardNum() {
+	public int getBoardNum() {
 		return boardNum;
 	}
 
-	public void setBoardNum(String boardNum) {
+	public void setBoardNum(int boardNum) {
 		this.boardNum = boardNum;
 	}
 
@@ -97,6 +97,7 @@ public class BoardFileDto {
 				+ ", attachPath=" + attachPath + ", Filename=" + Filename + ", upload=" + upload + ", CKEditorFuncNum="
 				+ CKEditorFuncNum + "]";
 	}
+
 	
     
 	

@@ -77,10 +77,23 @@
 				</div>
 			</nav>
 			<div>
-				<form action="" method="post">
-					<input type="text" name="BorderTitle" placeholder="제목"> 
-					<input type="text" name="BorderWritten" placeholder="작성자">
-					<textarea id="ckeditor" name="BorderContent"></textarea>
+				<form action="/admin/insertContent" method="post">
+					<input type="text" name="boardTitle" placeholder="제목">
+					<input type="date" name="createdTime">
+					<select name="genre">
+						<option value="">장르선택</option>
+						<option value="dance">Dance</option>
+						<option value="ballad">Ballad</option>
+						<option value="rb-soul">R&B / Soul</option>
+						<option value="rap-hip-hop">Rap / Hip-hop</option>
+						<option value="electronica">Electronica</option>
+						<option value="ost">OST</option>
+						<option value="folk">Folk</option>
+						<option value="jazz">Jazz</option>
+						<option value="pop">Pop</option>
+						<option value="rock">Rock</option>
+					</select>
+					<textarea id="ckeditor" name="boardContent"></textarea>
 					<input type="hidden"name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<input type="submit" value="작성">
 				</form>

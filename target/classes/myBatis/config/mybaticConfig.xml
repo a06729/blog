@@ -19,6 +19,8 @@
 	
 	<typeAliases>
 		<typeAlias alias="login" type="com.pknu.music.dto.LoginDto"/>
+		<typeAlias alias="boardDto" type="com.pknu.music.dto.BoardDto"/>
+		<typeAlias alias="boardFileDto" type="com.pknu.music.dto.BoardFileDto"/>
 		<typeAlias alias="map" type="java.util.Map"/>
 	</typeAliases>
 	

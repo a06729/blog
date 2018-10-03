@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.pknu.music.dao.AdminDao">
+  		<insert id="insertBoard" parameterType="boardDto">
+  			<selectKey keyProperty="boardNum" resultType="int" order="BEFORE" keyColumn="BOARDNUM" >
+  				select boardnum_seq.nextval from dual
+  			</selectKey>
+  			insert into board (BOARDNUM,BOARDTITLE,BOARDCONTENT,CREATEDETIME,USERID,GENRE)
+  			values(#{boardNum},#{boardTitle},#{boardContent},#{createdTime},#{userId},#{genre})
+  		</insert>
+  		
+  		<insert id="insertBoardFile" parameterType="boardFileDto">
+  			insert into
+  			BOARD_FILE(FILENUM,BOARDNUM,ORIGINAL_FILE_NAME,STORED_FILE_NAME,FILE_SIZE)
+  			values(filenum_seq.nextval,#{boardNum},#{orignal_File_Name},#{stored_File_Name},#{file_Size})
+  		</insert>
+  </mapper>
