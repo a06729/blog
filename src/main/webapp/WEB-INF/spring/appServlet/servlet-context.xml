@@ -16,6 +16,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/upload/**" location="/upload/" />
 	<resources mapping="/css/**" location="/resources/css/"></resources>
+	<resources mapping="/js/**" location="/resources/js/"></resources>
     <resources mapping="/temsource/css/**" location="/resources/temsource/css/" />
 	<resources mapping="/temsource/images/**" location="/resources/temsource/images/" />
 	<resources mapping="/temsource/js/**" location="/resources/temsource/js/" />

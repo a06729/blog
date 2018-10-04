@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Collapsible sidebar using Bootstrap 3</title>
+<title>어드민 글 작성페이지</title>
 
 <!-- Bootstrap CSS CDN -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,6 +43,7 @@
                             <li><a href="#">Page 3</a></li>
                         </ul>
                     </li>-->
+                <li><a href="#">음악글 목록</a></li>
 				<li><a href="#">음악글 작성</a></li>
 				<li><a href="#">Contact</a></li>
 			</ul>
@@ -79,7 +80,7 @@
 			<div>
 				<form action="/admin/insertContent" method="post">
 					<input type="text" name="boardTitle" placeholder="제목">
-					<input type="date" name="createdTime">
+					<input type="date" name="releaseDate">
 					<select name="genre">
 						<option value="">장르선택</option>
 						<option value="dance">Dance</option>

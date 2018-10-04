@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -22,6 +23,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.pknu.music.dto.BoardDto;
 import com.pknu.music.dto.BoardFileDto;
+import com.pknu.music.dto.PaginDto;
 import com.pknu.music.service.AdminService;
 
 @Controller
@@ -32,12 +34,12 @@ public class AdminController {
 	AdminService adminService;
 	
 	Map<String,Object>imageMap=new HashMap<String, Object>();
-	//페이지로 이동
+	//게시판 페이지로 이동
 	@RequestMapping(value="/boardPage")
 	public String adminPage() {
 		return "/admin/adminBoard";
 	}
-	
+
 	//게시글 업로드
 	@RequestMapping(value="/insertContent")
 	public void insertContent(Principal principal,BoardFileDto boardFileDto,BoardDto boardDto) {
@@ -48,6 +50,19 @@ public class AdminController {
 		boardFileDto.setStored_File_Name(String.valueOf(imageMap.get("filename")));
 		
 		adminService.insertContent(boardFileDto,boardDto);
+	}
+	
+	//업로드 게시글 어드민 페이지에 보여주는 기능
+	@RequestMapping(value="/adminBoardList")
+	public String adminBoardList(Model model,PaginDto paginDto,BoardDto boardDto) {
+		List<BoardDto>BoardLists=adminService.selectLists(paginDto,boardDto);
+		paginDto.setTotal(adminService.selectTotalPagin());
+		
+		System.out.println("getPageStartNum():"+paginDto.getPageStartNum());
+		
+		model.addAttribute("lists",BoardLists);
+		model.addAttribute("p",paginDto);
+		return "/admin/adminBoardList";
 	}
 	
 	//에디터 이미지 업로드

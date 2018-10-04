@@ -1,13 +1,15 @@
 package com.pknu.music.dto;
 
+import java.sql.Date;
+
 public class BoardDto {
 	private int boardNum;
 	private String boardTitle;
 	private String boardContent;
-	private String createdTime;
+	private Date releaseDate;  
 	private String userId;
 	private String genre;
-	
+	private Date regDate;
 	public int getBoardNum() {
 		return boardNum;
 	}
@@ -26,11 +28,11 @@ public class BoardDto {
 	public void setBoardContent(String boardContent) {
 		this.boardContent = boardContent;
 	}
-	public String getCreatedTime() {
-		return createdTime;
+	public Date getReleaseDate() {
+		return releaseDate;
 	}
-	public void setCreatedTime(String createdTime) {
-		this.createdTime = createdTime;
+	public void setReleaseDate(Date releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 	public String getUserId() {
 		return userId;
@@ -44,10 +46,18 @@ public class BoardDto {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+	
 	@Override
 	public String toString() {
 		return "BoardDto [boardNum=" + boardNum + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
-				+ ", createdTime=" + createdTime + ", userId=" + userId + ", genre=" + genre + "]";
+				+ ", releaseDate=" + releaseDate + ", userId=" + userId + ", genre=" + genre + ", regDate=" + regDate
+				+ "]";
 	}
 	
 	
