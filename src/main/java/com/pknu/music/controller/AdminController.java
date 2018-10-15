@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -48,12 +49,15 @@ public class AdminController {
 		boardFileDto.setFile_Size(String.valueOf(imageMap.get("fileSize")));
 		boardFileDto.setOrignal_File_Name(String.valueOf(imageMap.get("orignalFileName")));
 		boardFileDto.setStored_File_Name(String.valueOf(imageMap.get("filename")));
+		boardFileDto.setFilePath(String.valueOf(imageMap.get("filePath")));
+		
+		System.out.println("getFilePath:"+boardFileDto.getFilePath());
 		
 		adminService.insertContent(boardFileDto,boardDto);
 	}
 	
 	//업로드 게시글 어드민 페이지에 보여주는 기능
-	@RequestMapping(value="/adminBoardList")
+	@RequestMapping(value="/adminBoardList",method=RequestMethod.GET)
 	public String adminBoardList(Model model,PaginDto paginDto,BoardDto boardDto) {
 		List<BoardDto>BoardLists=adminService.selectLists(paginDto,boardDto);
 		paginDto.setTotal(adminService.selectTotalPagin());
@@ -65,6 +69,16 @@ public class AdminController {
 		return "/admin/adminBoardList";
 	}
 	
+	//업로드 게시글 자세히 보기
+	@RequestMapping(value="/adminBoardContent/{boardNum}")
+	public String adminBoardContent(@PathVariable int boardNum,BoardDto boardDto,Model model) {
+		List<BoardDto>boardList=adminService.getBoardContent(boardNum,boardDto);
+		
+		model.addAttribute("boardList",boardList);
+		
+		return"/admin/adminContent";
+	}
+	
 	//에디터 이미지 업로드
 	@RequestMapping(value="/imageUpload",method= RequestMethod.POST)
 	@ResponseBody
@@ -74,8 +88,8 @@ public class AdminController {
 										HttpServletResponse respons,Model model)throws Exception{
 		
 		HttpSession session=request.getSession();
-		String rootPath=session.getServletContext().getRealPath("fileUpload");
-		String attachPath="upload/";
+		String rootPath=session.getServletContext().getRealPath("/");
+		String attachPath="/upload/";
 		
 		MultipartFile upload=boardFileDto.getUpload();
 		String orignalFileName="";
@@ -92,7 +106,7 @@ public class AdminController {
 			
 			boardFileDto.setOrignal_File_Name(orignalFileName);
 			boardFileDto.setStored_File_Name(storedFileName);
-			boardFileDto.setAttachPath(filepath);
+//			boardFileDto.setAttachPath(filepath);
 			
 			try {
 				File file=new File(filepath);
@@ -108,11 +122,14 @@ public class AdminController {
 				e.printStackTrace();
 			}
 			System.out.println(rootPath+attachPath+storedFileName);
+			
+			imageMap.put("CKEditorFuncNum", boardFileDto.getCKEditorFuncNum());
 			imageMap.put("fileSize", upload.getSize());
 			imageMap.put("orignalFileName",boardFileDto.getOrignal_File_Name());
 			imageMap.put("filename", storedFileName);
+			imageMap.put("filePath",filepath);
 			imageMap.put("uploaded",1);
-			imageMap.put("url",attachPath+orignalFileName);
+			imageMap.put("url",attachPath+storedFileName);
 		}
 		return imageMap;
 	}

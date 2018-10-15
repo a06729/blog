@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/css/paging.css">
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script> 
-
+<script type="text/javascript" src="<c:url value='../resources/ckeditor/ckeditor.js'/>"></script>
 <script src="/js/paging.js"></script>    
 
 </head>
@@ -88,7 +88,7 @@
 					</tr>
 					<c:forEach var="dto" items="${lists}">
 						<tr>
-							<td>${dto.boardNum}</td>
+							<td><a href="/admin/adminBoardContent/${dto.boardNum}">${dto.boardNum}</a></td>
 							<td>${dto.boardTitle}</td>
 							<td>${dto.releaseDate}</td>
 							<td>${dto.regDate}</td>
@@ -119,7 +119,7 @@
 							onclick='pageLast(${p.pageStartNum},${p.total},${p.listCnt},${p.pageCnt});'>»</a></li>
 					</c:if>
 				</ul>
-				<form action="/admin/adminBoardList" method="post" id='frmPaging'>
+				<form action="/admin/adminBoardList" method="get" id='frmPaging'>
 					<!--출력할 페이지번호, 출력할 페이지 시작 번호, 출력할 리스트 갯수 -->
 					<input type='hidden' name='index' id='index' value='${p.index}'>
 					<input type='hidden' name='pageStartNum' id='pageStartNum'

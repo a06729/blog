@@ -12,8 +12,8 @@
   		
   		<insert id="insertBoardFile" parameterType="boardFileDto">
   			insert into
-  			BOARD_FILE(FILENUM,BOARDNUM,ORIGINAL_FILE_NAME,STORED_FILE_NAME,FILE_SIZE)
-  			values(filenum_seq.nextval,#{boardNum},#{orignal_File_Name},#{stored_File_Name},#{file_Size})
+  			BOARD_FILE(FILENUM,BOARDNUM,ORIGINAL_FILE_NAME,STORED_FILE_NAME,FILE_SIZE,FILEPATH)
+  			values(filenum_seq.nextval,#{boardNum},#{orignal_File_Name},#{stored_File_Name},#{file_Size},#{filePath})
   		</insert>
   
   		<select id="selectBoardLists" parameterType="paginDto" resultType="boardDto">
@@ -27,4 +27,11 @@
   		<select id="selectTotalPagin" resultType="int">
   			select count(*) from board
   		</select>
+  		
+  		<select id="getBoardContent" parameterType="boardDto" resultType="boardDto">
+  			select *
+  			from board
+  			where BOARDNUM = #{boardNum}
+  		</select>
+  		
   </mapper>

@@ -9,8 +9,10 @@ public class BoardFileDto {
 	private String stored_File_Name;
 	private String file_Size;
 	
-    private String attachPath; //이미지가 저장될 경로
+//  private String attachPath; //이미지가 저장될 경로
     
+	private String filePath;
+	
     private String Filename; //파일이름
  
     private MultipartFile upload;
@@ -58,12 +60,12 @@ public class BoardFileDto {
 		this.file_Size = file_Size;
 	}
 
-	public String getAttachPath() {
-		return attachPath;
+	public String getFilePath() {
+		return filePath;
 	}
 
-	public void setAttachPath(String attachPath) {
-		this.attachPath = attachPath;
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
 	public String getFilename() {
@@ -94,11 +96,10 @@ public class BoardFileDto {
 	public String toString() {
 		return "BoardFileDto [fileNum=" + fileNum + ", boardNum=" + boardNum + ", orignal_File_Name="
 				+ orignal_File_Name + ", stored_File_Name=" + stored_File_Name + ", file_Size=" + file_Size
-				+ ", attachPath=" + attachPath + ", Filename=" + Filename + ", upload=" + upload + ", CKEditorFuncNum="
+				+ ", filePath=" + filePath + ", Filename=" + Filename + ", upload=" + upload + ", CKEditorFuncNum="
 				+ CKEditorFuncNum + "]";
 	}
 
-	
     
 	
 }

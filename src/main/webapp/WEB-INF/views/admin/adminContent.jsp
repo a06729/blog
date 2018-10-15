@@ -8,13 +8,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>어드민 글 작성페이지</title>
+<title>어드민 글 보는페이지</title>
 
 <!-- Bootstrap CSS CDN -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/admin.css" />
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script> 
-<script type="text/javascript" src="<c:url value='../resources/ckeditor/ckeditor.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/resources/ckeditor/ckeditor.js'/>"></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -78,26 +78,9 @@
 				</div>
 			</nav>
 			<div>
-				<form action="/admin/insertContent" method="post">
-					<input type="text" name="boardTitle" placeholder="제목">
-					<input type="date" name="releaseDate">
-					<select name="genre">
-						<option value="">장르선택</option>
-						<option value="dance">Dance</option>
-						<option value="ballad">Ballad</option>
-						<option value="rb-soul">R&B / Soul</option>
-						<option value="rap-hip-hop">Rap / Hip-hop</option>
-						<option value="electronica">Electronica</option>
-						<option value="ost">OST</option>
-						<option value="folk">Folk</option>
-						<option value="jazz">Jazz</option>
-						<option value="pop">Pop</option>
-						<option value="rock">Rock</option>
-					</select>
-					<textarea id="ckeditor" name="boardContent"></textarea>
-					<input type="hidden"name="${_csrf.parameterName}" value="${_csrf.token}"/>
-					<input type="submit" value="작성">
-				</form>
+				<c:forEach var="items" items="${boardList}">
+				${items.boardContent}
+				</c:forEach>
 			</div>
 		</div>
 	</div>
@@ -116,25 +99,5 @@
                  });
              });
     </script>
-    
-    <script type="text/javascript">
-		$(function() {
-			CKEDITOR.replace('ckeditor',{
-				height:260,
-				width:700,
-				filebrowserImageUploadUrl : '/admin/imageUpload?type=image'
-				
-			});
-			CKEDITOR.editorConfig = function( config ) {
-			    config.language = 'es';
-			    config.uiColor = '#F7B42C';
-			    config.height = 300;
-			    config.toolbarCanCollapse = true;
-			};
-			
-			window.parent.CKEDITOR.tools.callFunction({"filename" :'${filename}', "uploaded" : 1, "url":'${url}'});
-
-		});
-	</script>
 </body>
 </html>

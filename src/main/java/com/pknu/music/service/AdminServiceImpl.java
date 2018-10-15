@@ -45,5 +45,13 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.selectTotalPagin();
 	}
 
+	@Override
+	public List<BoardDto> getBoardContent(int boardNum, BoardDto boardDto) {
+		boardDto.setBoardNum(boardNum);
+		return adminDao.getBoardContent(boardDto);
+	}
+
+	
+
 	
 }

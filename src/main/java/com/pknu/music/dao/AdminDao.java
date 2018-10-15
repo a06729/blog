@@ -18,6 +18,8 @@ public interface AdminDao {
 
 	int selectTotalPagin();
 
+	List<BoardDto> getBoardContent(BoardDto boardDto);
+
 
 
 }

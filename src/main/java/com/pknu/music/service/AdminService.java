@@ -15,5 +15,8 @@ public interface AdminService {
 
 	public int selectTotalPagin();
 
+	public List<BoardDto> getBoardContent(int boardNum, BoardDto boardDto);
+
+
 
 }

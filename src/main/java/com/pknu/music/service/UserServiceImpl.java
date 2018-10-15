@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pknu.music.dao.UserDao;
+import com.pknu.music.dto.BoardDto;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -17,5 +18,11 @@ public class UserServiceImpl implements UserService {
 		userDao.insertUser(paramMap);
 		
 	}
+
+//	@Override
+//	public void getContent(BoardDto boardDto) {
+//		userDao.selectContent(boardDto);
+//		
+//	}
 
 }

@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.pknu.music.dto.BoardDto;
 import com.pknu.music.security.ShaEncoder;
 import com.pknu.music.service.UserService;
 
@@ -23,11 +25,12 @@ public class MainController {
 	private ShaEncoder encoder;
 	
 	@Autowired
-	UserService userSerive;
+	UserService userService;
 	
 	//메인 페이지 이동
 	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String home() {
+	public String home(BoardDto boardDto) {
+//		userService.getContent(boardDto);
 		return "index";
 	}
 	//로그인 페이지 이동
@@ -65,7 +68,7 @@ public class MainController {
 		paramMap.put("enabled",enabled);
 		paramMap.put("authority",authority);
 //		logger.info("dbpw"+paramMap.get("passwd"));
-		userSerive.insertUser(paramMap);
+		userService.insertUser(paramMap);
 		
 		return"/loginPage";
 	}
