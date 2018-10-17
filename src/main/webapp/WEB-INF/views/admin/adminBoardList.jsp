@@ -78,23 +78,27 @@
 					<option value='15'>15</option>
 					<option value='20'>20</option>
 				</select>
-
-				<table class="table table-bordered">
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>출시일</th>
-						<th>작성일</th>
-					</tr>
-					<c:forEach var="dto" items="${lists}">
+				<form action="/admin/boardDelete" id="delete" method="post">
+					<input id="deleteBnt" type="button" value="삭제" onclick="clickCheck()">
+					<table class="table table-bordered">
 						<tr>
-							<td><a href="/admin/adminBoardContent/${dto.boardNum}">${dto.boardNum}</a></td>
-							<td>${dto.boardTitle}</td>
-							<td>${dto.releaseDate}</td>
-							<td>${dto.regDate}</td>
+							<th>선택</th>
+							<th>번호</th>
+							<th>제목</th>
+							<th>출시일</th>
+							<th>작성일</th>
 						</tr>
-					</c:forEach>
-				</table>
+						<c:forEach var="dto" items="${lists}">
+							<tr>
+								<td><input type="checkbox" id="boardNum" name="boardNum" value="${dto.boardNum}"></td>
+								<td><a href="/admin/adminBoardContent/${dto.boardNum}">${dto.boardNum}</a></td>
+								<td>${dto.boardTitle}</td>
+								<td>${dto.releaseDate}</td>
+								<td>${dto.regDate}</td>
+							</tr>
+						</c:forEach>
+					</table>
+				</form>
 				<!-- 5. paging view -->
 				<ul class="pagination">
 					<c:if test="${p.pageStartNum ne 1}">
@@ -138,5 +142,15 @@
                  });
              });
     </script>
+	<script type="text/javascript">
+		function clickCheck() {
+			var boardCheck= $('#boardNum').prop("checked");
+			if(boardCheck==false){
+			 	alert("삭제할 게시물을 체크해주세요");
+			 	return; 
+			 }
+			$("#delete").submit();
+		}
+	</script>
 </body>
 </html>

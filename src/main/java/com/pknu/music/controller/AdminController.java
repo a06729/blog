@@ -13,11 +13,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -83,9 +87,8 @@ public class AdminController {
 	@RequestMapping(value="/imageUpload",method= RequestMethod.POST)
 	@ResponseBody
 	public Map<String,Object>imageUpload(BoardFileDto boardFileDto,
-										MultipartHttpServletRequest mtfRequest,
 										HttpServletRequest request,
-										HttpServletResponse respons,Model model)throws Exception{
+										Model model)throws Exception{
 		
 		HttpSession session=request.getSession();
 		String rootPath=session.getServletContext().getRealPath("/");
@@ -123,7 +126,6 @@ public class AdminController {
 			}
 			System.out.println(rootPath+attachPath+storedFileName);
 			
-			imageMap.put("CKEditorFuncNum", boardFileDto.getCKEditorFuncNum());
 			imageMap.put("fileSize", upload.getSize());
 			imageMap.put("orignalFileName",boardFileDto.getOrignal_File_Name());
 			imageMap.put("filename", storedFileName);
@@ -134,5 +136,11 @@ public class AdminController {
 		return imageMap;
 	}
 	
+	//게시글 삭제
+	@PostMapping(value="/boardDelete")
+	public String boardDelete(HttpServletRequest request) {
+		adminService.boardDelete(request);
+		return "redirect:/admin/adminBoardList";
+	}
 	
 }

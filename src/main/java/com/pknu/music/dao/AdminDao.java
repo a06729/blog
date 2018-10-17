@@ -20,6 +20,8 @@ public interface AdminDao {
 
 	List<BoardDto> getBoardContent(BoardDto boardDto);
 
+	void boardDelete(String check);
+
 
 
 }

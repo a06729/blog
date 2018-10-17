@@ -33,5 +33,9 @@
   			from board
   			where BOARDNUM = #{boardNum}
   		</select>
-  		
+  		<delete id="boardDelete" parameterType="String">
+  			delete
+  			from board
+  			where BOARDNUM=#{check}
+  		</delete>
   </mapper>

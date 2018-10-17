@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.mail.search.IntegerComparisonTerm;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,6 +50,16 @@ public class AdminServiceImpl implements AdminService {
 	public List<BoardDto> getBoardContent(int boardNum, BoardDto boardDto) {
 		boardDto.setBoardNum(boardNum);
 		return adminDao.getBoardContent(boardDto);
+	}
+
+	@Override
+	public void boardDelete(HttpServletRequest request) {
+		String[]Checks=request.getParameterValues("boardNum");
+		for(String check:Checks) {
+			System.out.println("ckecknum:"+check);
+			adminDao.boardDelete(check);
+		}
+		
 	}
 
 	

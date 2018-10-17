@@ -1,6 +1,7 @@
 package com.pknu.music.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 public class BoardDto {
 	private int boardNum;
@@ -10,6 +11,7 @@ public class BoardDto {
 	private String userId;
 	private String genre;
 	private Date regDate;
+	private List<BoardDto>list;
 	public int getBoardNum() {
 		return boardNum;
 	}
@@ -52,13 +54,19 @@ public class BoardDto {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-	
+	public List<BoardDto> getList() {
+		return list;
+	}
+	public void setList(List<BoardDto> list) {
+		this.list = list;
+	}
 	@Override
 	public String toString() {
 		return "BoardDto [boardNum=" + boardNum + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
 				+ ", releaseDate=" + releaseDate + ", userId=" + userId + ", genre=" + genre + ", regDate=" + regDate
-				+ "]";
+				+ ", list=" + list + "]";
 	}
+	
 	
 	
 }
