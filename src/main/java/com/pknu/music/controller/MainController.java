@@ -1,6 +1,7 @@
 package com.pknu.music.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -8,11 +9,13 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pknu.music.dto.BoardDto;
+import com.pknu.music.dto.BoardFileDto;
 import com.pknu.music.security.ShaEncoder;
 import com.pknu.music.service.UserService;
 
@@ -29,9 +32,9 @@ public class MainController {
 	
 	//메인 페이지 이동
 	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String home(BoardDto boardDto) {
-//		userService.getContent(boardDto);
-		return "index";
+	public String home(BoardDto boardDto,BoardFileDto boardFileDto,Model model) {
+		return userService.getContent(boardDto,boardFileDto,model);
+//		return "index";
 	}
 	//로그인 페이지 이동
 	@RequestMapping(value="/loginPage",method=RequestMethod.GET)

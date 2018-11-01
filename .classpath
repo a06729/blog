@@ -34,5 +34,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/spring/blog/log4sql/log4sql.jar"/>
+	<classpathentry kind="lib" path="C:/spring/blog/log4sql/log4sql-src.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

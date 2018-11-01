@@ -91,8 +91,8 @@ public class AdminController {
 										Model model)throws Exception{
 		
 		HttpSession session=request.getSession();
-		String rootPath=session.getServletContext().getRealPath("/");
-		String attachPath="/upload/";
+		String rootPath=session.getServletContext().getRealPath("");
+		String attachPath="upload";
 		
 		MultipartFile upload=boardFileDto.getUpload();
 		String orignalFileName="";
@@ -105,7 +105,8 @@ public class AdminController {
 			System.out.println("orignalFileName:"+orignalFileName);
 			storedFileName=uuid.toString()+orignalFileName;
 			
-			String filepath=rootPath+"\\"+attachPath+"\\"+storedFileName;
+			String filepath=rootPath+File.separator+attachPath+File.separator+storedFileName;
+			String dbpath="/"+attachPath+"/"+storedFileName;
 			
 			boardFileDto.setOrignal_File_Name(orignalFileName);
 			boardFileDto.setStored_File_Name(storedFileName);
@@ -124,14 +125,14 @@ public class AdminController {
 			}catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println(rootPath+attachPath+storedFileName);
+			System.out.println(filepath);
 			
 			imageMap.put("fileSize", upload.getSize());
 			imageMap.put("orignalFileName",boardFileDto.getOrignal_File_Name());
 			imageMap.put("filename", storedFileName);
-			imageMap.put("filePath",filepath);
+			imageMap.put("filePath",dbpath);
 			imageMap.put("uploaded",1);
-			imageMap.put("url",attachPath+storedFileName);
+			imageMap.put("url",dbpath);
 		}
 		return imageMap;
 	}

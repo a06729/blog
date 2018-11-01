@@ -1,0 +1,10 @@
+core.log.aop.reflection
+core.log.aop.handler
+core.log.aop.reflection.profiler
+core.log.conf.reloadable
+core.log.exception
+core.log.impl
+core.log.jdbc
+core.log.jdbc.driver
+core.log.logger
+core.log.triggers

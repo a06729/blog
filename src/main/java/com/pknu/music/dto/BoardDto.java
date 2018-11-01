@@ -11,7 +11,7 @@ public class BoardDto {
 	private String userId;
 	private String genre;
 	private Date regDate;
-	private List<BoardDto>list;
+	private String filePath;
 	public int getBoardNum() {
 		return boardNum;
 	}
@@ -54,18 +54,20 @@ public class BoardDto {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-	public List<BoardDto> getList() {
-		return list;
+	public String getFilePath() {
+		return filePath;
 	}
-	public void setList(List<BoardDto> list) {
-		this.list = list;
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 	@Override
 	public String toString() {
 		return "BoardDto [boardNum=" + boardNum + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
 				+ ", releaseDate=" + releaseDate + ", userId=" + userId + ", genre=" + genre + ", regDate=" + regDate
-				+ ", list=" + list + "]";
+				+ ", filePath=" + filePath + "]";
 	}
+	
+	
 	
 	
 	

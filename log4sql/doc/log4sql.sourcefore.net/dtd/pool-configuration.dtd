@@ -1,0 +1,14 @@
+<!ELEMENT pools (pool+)>
+	<!ELEMENT pool (driver-class-name, driver-url, user-name, user-pass)>
+	<!ENTITY % BOOL "true | false">
+	<!ENTITY % TEMP "1 | 2">
+	    <!ATTLIST pool name ID #REQUIRED>
+	    <!ATTLIST pool auto-commit (%BOOL;) #IMPLIED>
+	    <!ATTLIST pool read-only (%BOOL;) #IMPLIED>
+	    <!ATTLIST pool max-active (%TEMP;) #REQUIRED>
+	    <!ATTLIST pool max-idle CDATA  #IMPLIED>
+	    <!ATTLIST pool max-wait CDATA  #IMPLIED>
+            <!ELEMENT driver-class-name (#PCDATA)>
+            <!ELEMENT driver-url (#PCDATA)>
+            <!ELEMENT user-name (#PCDATA)>
+            <!ELEMENT user-pass (#PCDATA)>

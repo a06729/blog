@@ -1,0 +1,353 @@
+/*
+    File Name   : cmCommonStyle.css
+    Description : C-SCM  CSS Ç¥ÁØ
+    History     : - 2001/12/15  Jungmin Kim  Create.
+                  - 2002/09/10  Jungmin Kim  Modified.
+
+    Copyright notice : Copyright (C) 2000 by SAMSUNG SDS co.,Ltd. All right reserved.
+*/
+
+/*loginÆäÀÌÁö ¹× ÀÏ¹Ý ÆùÆ®µé¿¡ Àû¿ëµÇ´Â CSS*/
+inputs_ctl {
+    border: 1px none #0000CD;
+    height: 18px;
+    font: bolder normal normal 9pt ±¼¸²;
+    text-align : left;
+    vertical-align : middle;
+    color : #0000CD;
+    font-stretch : normal;
+    font-weight : bold;
+}
+.normal {color:black; display: none}
+.login_box      {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; height: 21px; width: 82px;  background-color: BFDAED; }
+.login_select   {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; height: 21px; width: 100px; background-color: BFDAED; }
+
+.cm_menu        {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color:#2C4A5C; }
+.left_menu      {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; word-break:break-all; }
+.pw_title       {  font-family: "µ¸¿ò", "Arial"; font-size: 13px; font-weight: bold; }
+.body01         {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color: 153E5A; }
+.body02         {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color: 404243; }
+.sub_body       {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.sub_count      {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color: 9D9E9E; }
+.main_table     {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color: 144060; }
+
+/* ¸¶Áö¸· Ãß°¡µÈ ³»¿ë table_11px_tit --> »çÀÌÆ®¸Ê¿¡¼­ »ç¿ë */
+.table_11px_tit     {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; WORD-BREAK: break-all; font-weight:bold ; color:#3E64A4 }
+.table_11px         {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; word-break:break-all; }
+.table_11px_nobreak {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; word-break:keep-all; }
+.table_11px_gridRB  {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; word-break:break-all; border-right:#828F92 solid 1px;border-bottom:#828F92 solid 1px; }
+.list_col_gridRB    {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; word-break:keep-all;  border-right:#828F92 solid 1px;border-bottom:#828F92 solid 1px; }
+.table_12px         {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.list_col_title     {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; word-break:keep-all; }
+.message        {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; line-height:20px; }
+.name           {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.popup_360      {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; height: 19px;  width: 360px;  }
+.popup_382      {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; height: 120px; width: 382px;  }
+.multiple       {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; width: 220px; }
+.div_margin     {  margin-top:3;margin-bottom:2;margin-left:3;margin-right:3; }
+
+/* Input Type=file¿¡ »ç¿ëµÇ´Â  CSS */
+.file           {  font-family: "µ¸¿ò", "Arial"; font-size: 11px; height: 19px; width: 280px; border:#000000 solid 1px; }
+
+
+/* INPUT, SELECT , CHECK BOX, RADIO BUTTON µîÀÇ Æû¿ä¼Ò¸¦ ControlÇÏ´Â CSS(widthº°·Î Á¤¸®)*/
+.width_40   { height: 19px; width:  40px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_45   { height: 19px; width:  45px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_50   { height: 19px; width:  50px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_55   { height: 19px; width:  55px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_60   { height: 19px; width:  60px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_65   { height: 19px; width:  65px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_70   { height: 19px; width:  70px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_75   { height: 19px; width:  75px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_80   { height: 19px; width:  80px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_85   { height: 19px; width:  85px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_90   { height: 19px; width:  90px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_92   { height: 19px; width:  92px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_93   { height: 19px; width:  93px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_95   { height: 19px; width:  95px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_96   { height: 19px; width:  96px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_97   { height: 19px; width:  97px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_98   { height: 19px; width:  98px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_99   { height: 19px; width:  99px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_100  { height: 19px; width: 100px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_105  { height: 19px; width: 105px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_110  { height: 19px; width: 110px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_115  { height: 19px; width: 115px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_120  { height: 19px; width: 120px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_125  { height: 19px; width: 125px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_130  { height: 19px; width: 130px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_135  { height: 19px; width: 135px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_140  { height: 19px; width: 140px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_145  { height: 19px; width: 145px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_150  { height: 19px; width: 150px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_155  { height: 19px; width: 155px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.width_160  { height: 19px; width: 160px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_170  { height: 19px; width: 170px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_180  { height: 19px; width: 180px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_190  { height: 19px; width: 190px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_200  { height: 19px; width: 200px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_210  { height: 19px; width: 210px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_220  { height: 19px; width: 220px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_225  { height: 19px; width: 225px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_230  { height: 19px; width: 230px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_240  { height: 19px; width: 240px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_250  { height: 19px; width: 250px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_260  { height: 19px; width: 260px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_270  { height: 19px; width: 270px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_280  { height: 19px; width: 280px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_290  { height: 19px; width: 290px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_300  { height: 19px; width: 300px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_310  { height: 19px; width: 310px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_320  { height: 19px; width: 320px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_330  { height: 19px; width: 330px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_340  { height: 19px; width: 340px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_350  { height: 19px; width: 350px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_400  { height: 19px; width: 400px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_450  { height: 19px; width: 450px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_500  { height: 19px; width: 500px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_550  { height: 19px; width: 550px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_600  { height: 19px; width: 600px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_650  { height: 19px; width: 650px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+.width_700  { height: 19px; width: 700px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; }
+
+
+
+/* INPUT, SELECT , CHECK BOX, RADIO BUTTON µîÀÇ Æû¿ä¼Ò¸¦ ControlÇÏ´Â CSS(textÀÇ ¿À¸¥ÂÊ Á¤·Ä)*/
+.width_40RIGHT   { height: 19px; width:  40px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_45RIGHT   { height: 19px; width:  45px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_50RIGHT   { height: 19px; width:  50px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_55RIGHT   { height: 19px; width:  55px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_60RIGHT   { height: 19px; width:  60px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_65RIGHT   { height: 19px; width:  65px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_70RIGHT   { height: 19px; width:  70px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_75RIGHT   { height: 19px; width:  75px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_80RIGHT   { height: 19px; width:  80px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_85RIGHT   { height: 19px; width:  85px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_90RIGHT   { height: 19px; width:  90px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_92RIGHT   { height: 19px; width:  92px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_95RIGHT   { height: 19px; width:  95px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_100RIGHT  { height: 19px; width: 100px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_105RIGHT  { height: 19px; width: 105px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_110RIGHT  { height: 19px; width: 110px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_115RIGHT  { height: 19px; width: 115px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_120RIGHT  { height: 19px; width: 120px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_125RIGHT  { height: 19px; width: 125px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_130RIGHT  { height: 19px; width: 130px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_135RIGHT  { height: 19px; width: 135px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_140RIGHT  { height: 19px; width: 140px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_145RIGHT  { height: 19px; width: 145px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_150RIGHT  { height: 19px; width: 150px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_155RIGHT  { height: 19px; width: 155px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_160RIGHT  { height: 19px; width: 160px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_170RIGHT  { height: 19px; width: 170px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_180RIGHT  { height: 19px; width: 180px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_190RIGHT  { height: 19px; width: 190px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_200RIGHT  { height: 19px; width: 200px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_210RIGHT  { height: 19px; width: 210px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_220RIGHT  { height: 19px; width: 220px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_225RIGHT  { height: 19px; width: 225px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_230RIGHT  { height: 19px; width: 230px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_240RIGHT  { height: 19px; width: 240px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_250RIGHT  { height: 19px; width: 250px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_260RIGHT  { height: 19px; width: 260px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_270RIGHT  { height: 19px; width: 270px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_280RIGHT  { height: 19px; width: 280px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_290RIGHT  { height: 19px; width: 290px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_300RIGHT  { height: 19px; width: 300px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_310RIGHT  { height: 19px; width: 310px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_320RIGHT  { height: 19px; width: 320px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_330RIGHT  { height: 19px; width: 330px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_340RIGHT  { height: 19px; width: 340px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_350RIGHT  { height: 19px; width: 350px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_400RIGHT  { height: 19px; width: 400px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_450RIGHT  { height: 19px; width: 450px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_500RIGHT  { height: 19px; width: 500px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_550RIGHT  { height: 19px; width: 550px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_600RIGHT  { height: 19px; width: 600px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_650RIGHT  { height: 19px; width: 650px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+.width_700RIGHT  { height: 19px; width: 700px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+
+/* INPUT, SELECT , CHECK BOX, RADIO BUTTON µîÀÇ Æû¿ä¼Ò¸¦ ControlÇÏ´Â CSS(textÀÇ °¡¿îµ¥ Á¤·Ä)*/
+.width_40CENTER   { height: 19px; width:  40px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_45CENTER   { height: 19px; width:  45px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_50CENTER   { height: 19px; width:  50px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_55CENTER   { height: 19px; width:  55px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_60CENTER   { height: 19px; width:  60px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_65CENTER   { height: 19px; width:  65px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_70CENTER   { height: 19px; width:  70px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_75CENTER   { height: 19px; width:  75px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_80CENTER   { height: 19px; width:  80px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_85CENTER   { height: 19px; width:  85px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_90CENTER   { height: 19px; width:  90px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_92CENTER   { height: 19px; width:  92px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_95CENTER   { height: 19px; width:  95px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_100CENTER  { height: 19px; width: 100px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_105CENTER  { height: 19px; width: 105px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_110CENTER  { height: 19px; width: 110px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_115CENTER  { height: 19px; width: 115px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_120CENTER  { height: 19px; width: 120px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_125CENTER  { height: 19px; width: 125px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_130CENTER  { height: 19px; width: 130px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_135CENTER  { height: 19px; width: 135px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_140CENTER  { height: 19px; width: 140px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_145CENTER  { height: 19px; width: 145px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_150CENTER  { height: 19px; width: 150px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_155CENTER  { height: 19px; width: 155px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_160CENTER  { height: 19px; width: 160px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_170CENTER  { height: 19px; width: 170px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_180CENTER  { height: 19px; width: 180px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_190CENTER  { height: 19px; width: 190px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_200CENTER  { height: 19px; width: 200px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_210CENTER  { height: 19px; width: 210px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_220CENTER  { height: 19px; width: 220px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_225CENTER  { height: 19px; width: 225px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_230CENTER  { height: 19px; width: 230px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_240CENTER  { height: 19px; width: 240px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_250CENTER  { height: 19px; width: 250px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_260CENTER  { height: 19px; width: 260px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_270CENTER  { height: 19px; width: 270px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_280CENTER  { height: 19px; width: 280px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_290CENTER  { height: 19px; width: 290px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_300CENTER  { height: 19px; width: 300px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_310CENTER  { height: 19px; width: 310px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_320CENTER  { height: 19px; width: 320px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_330CENTER  { height: 19px; width: 330px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_340CENTER  { height: 19px; width: 340px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_350CENTER  { height: 19px; width: 350px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_400CENTER  { height: 19px; width: 400px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_450CENTER  { height: 19px; width: 450px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_500CENTER  { height: 19px; width: 500px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_550CENTER  { height: 19px; width: 550px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_600CENTER  { height: 19px; width: 600px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_650CENTER  { height: 19px; width: 650px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+.width_700CENTER  { height: 19px; width: 700px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:center; }
+
+/* INPUT, SELECT , CHECK BOX, RADIO BUTTON µîÀÇ Æû¿ä¼Ò¸¦ ControlÇÏ´Â CSS(read only ->disable½Ã »ç¿ë)*/
+.width_40R   { height: 19px; width:  40px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_45R   { height: 19px; width:  45px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_50R   { height: 19px; width:  50px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_55R   { height: 19px; width:  55px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_60R   { height: 19px; width:  60px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_65R   { height: 19px; width:  65px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_70R   { height: 19px; width:  70px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_75R   { height: 19px; width:  75px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_80R   { height: 19px; width:  80px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_85R   { height: 19px; width:  85px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_90R   { height: 19px; width:  90px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_92R   { height: 19px; width:  92px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_95R   { height: 19px; width:  95px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_100R  { height: 19px; width: 100px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_105R  { height: 19px; width: 105px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_110R  { height: 19px; width: 110px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_115R  { height: 19px; width: 115px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_120R  { height: 19px; width: 120px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_125R  { height: 19px; width: 125px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_130R  { height: 19px; width: 130px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_135R  { height: 19px; width: 135px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_140R  { height: 19px; width: 140px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_145R  { height: 19px; width: 145px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_150R  { height: 19px; width: 150px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_155R  { height: 19px; width: 155px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_160R  { height: 19px; width: 160px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_170R  { height: 19px; width: 170px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_180R  { height: 19px; width: 180px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_190R  { height: 19px; width: 190px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_200R  { height: 19px; width: 200px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_210R  { height: 19px; width: 210px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_220R  { height: 19px; width: 220px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_225R  { height: 19px; width: 225px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_230R  { height: 19px; width: 230px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_240R  { height: 19px; width: 240px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_250R  { height: 19px; width: 250px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_260R  { height: 19px; width: 260px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_270R  { height: 19px; width: 270px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_280R  { height: 19px; width: 280px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_290R  { height: 19px; width: 290px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_300R  { height: 19px; width: 300px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_310R  { height: 19px; width: 310px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_320R  { height: 19px; width: 320px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_330R  { height: 19px; width: 330px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_340R  { height: 19px; width: 340px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_350R  { height: 19px; width: 350px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_400R  { height: 19px; width: 400px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_450R  { height: 19px; width: 450px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_500R  { height: 19px; width: 500px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_550R  { height: 19px; width: 550px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_600R  { height: 19px; width: 600px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_650R  { height: 19px; width: 650px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+.width_700R  { height: 19px; width: 700px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; color: 808080; background-color: E5E5E5; }
+
+/*Ä®¶ó°ªÀÌ ´Ù¸¥ Disabled*/
+.width_12   { height: 12px; width:  12px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.width_75D  { height: 19px; width: 75px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;border-width:2; border-style:groove; background-color:#ffffff; }
+.width_150D  { height: 19px; width: 150px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;border-width:2; border-style:groove; background-color:#ffffff; }
+
+
+/* INPUT, SELECT , CHECK BOX, RADIO BUTTON µîÀÇ Æû¿ä¼Ò¸¦ ControlÇÏ´Â CSS(heightº°·Î Á¤¸®)*/
+.width_450H  { height: 40px; width: 450px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.width_700H  { height: 40px; width: 700px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.height_58   { height: 58px; width: 225px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.height_700  { height: 43px; width: 700px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.width_450TA { height: 43px; width: 450px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.width_600TA { height: 43px; width: 600px; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+.width_90B   { height: 20px; width:  90px; font-family: "µ¸¿ò", "Arial"; font-size: 12px; background-color: BFEEF0; }
+
+/* for Forecast Collaboration Management Supplier */
+.width_19H  { height: 19px; width: 105px; font-family: "µ¸¿ò", "Arial"; font-size: 11px;text-align:right; }
+
+/* ±× ¿Ü ...*/
+.width_100P { height: 19px; width: 100%; font-family: "µ¸¿ò", "Arial"; font-size: 11px; }
+
+
+
+/* ±âº» ¸µÅ©½Ã »ç¿ë µÊ-¸µÅ©µÇ´Â »ö±ò,¸¶¿ì½º ¿À¹ö½Ã »ö±ò, ÇÑ¹ø ¹æ¹®ÇÑ °÷ÀÇ »ö±ò : ¸ðµÎ °ËÀº»ö */
+/* ¾²ÀÌ´Â °÷ : ¸Þ´º ¹× ¹öÆ° */
+A:hover     { COLOR : #000000;    TEXT-DECORATION : none;}
+A:link      { COLOR : #000000;    TEXT-DECORATION : none;}
+A:visited   { COLOR : #000000;    TEXT-DECORATION : none;}
+
+
+
+/* ¸µÅ©µÇ´Â °÷ÀÇ »ö±òÀÌ Ç¥½ÃµÇ´Â CSS */
+/* »ç¿ë¹æ¹ý : <A href=" "  class="LINK"></A> */
+.LINK:hover   { COLOR : #010090; TEXT-DECORATION : none;}
+.LINK:link    { COLOR : #010090; TEXT-DECORATION : none;}
+.LINK:visited { COLOR : #483F5E; TEXT-DECORATION : none;}
+
+
+/* ¸µÅ©½Ã Ç¥½ÃµÇ´Â »ö±ò - °ËÀº»ö */
+/* ¸¶¿ì½º ¿À¹ö½Ã »ö±ò - °ËÀº»ö, ¹ØÁÙ */
+/* ¸µÅ©µÈ °÷À»´Ù³à¿Â ÈÄ »ö±ò - °ËÀº»ö */
+/* ÁÖ·Î CPÂÊ Å×ÀÌºí¿¡ ¾²¿©¼­ ÀÌ¸§ÀÌ CP°¡ µÇ¾úÀ½ */
+/* »ç¿ë¹æ¹ý : <A href=" "  class="CP"></A> */
+.CP:hover   { COLOR : #010090;    TEXT-DECORATION : underline;}
+.CP:link    { COLOR : #010090;    TEXT-DECORATION : none;}
+.CP:visited { COLOR : #483F5E;    TEXT-DECORATION : none;}
+
+
+/* only PW CSS*/
+/* »óÅÂ¸¦ º¸¿©ÁÙ¶§ »ç¿ë*/
+/* »ç¿ë¹æ¹ý : <SPAN class="PWSTATUS_N"></SPAN */
+.PWSTATUS_N { COLOR : #FF0000;}
+/* »ç¿ë¹æ¹ý : <A href=" "  class="PWSTATUS"></A> */
+.PWSTATUS:hover   { COLOR : #FF0000; TEXT-DECORATION : underline;}
+.PWSTATUS:link    { COLOR : #FF0000; TEXT-DECORATION : none;}
+.PWSTATUS:visited { COLOR : #FF0000; TEXT-DECORATION : none;}
+
+
+/* ´Þ·Â¿¡ ¾²ÀÏ CSS */
+.calendar       {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color: 305169; font-weight: bold;}
+.calendar_day   {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color: 333333; }
+.date           {  font-family: "µ¸¿ò", "Arial"; font-size: 12px; color: FFFFFF; }
+.width_50D  { height: 19px; width:  50px; font-family: "µ¸¿ò", "arial"; font-size: 12px; COLOR:#333333; scrollbar-face-color: #BAD1E3;}
+
+
+/* Scroll CSS */
+body {
+{scrollbar-face-color: #E4E5E4;
+scrollbar-shadow-color: #908F90;
+scrollbar-highlight-color: #FFFFFF;
+scrollbar-3dlight-color: #908F90;
+scrollbar-darkshadow-color: #FFFFFF;
+scrollbar-track-color: #EFEFEF;
+scrollbar-arrow-color: #757575}

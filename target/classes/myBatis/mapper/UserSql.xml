@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.pknu.music.dao.UserDao">
+<mapper namespace="com.pknu.music.dao.UserDao">	
 	<insert id="insertUser" parameterType="map">
 		insert into Users
 		values(#{id},#{passwd},#{email},#{authority},#{enabled})
 	</insert>
+	
+	<select id="getContent" parameterType="boardDto" resultType="boardDto">
+		<![CDATA[
+			select BOARDNUM,BOARDTITLE,FILEPATH
+			from(
+				select BOARDNUM,BOARDTITLE,FILEPATH
+				from BOARD natural join BOARD_FILE
+				order by RELEASEDATE DESC
+			)where ROWNUM <=10 
+		]]>
+	</select>
+	
 </mapper>

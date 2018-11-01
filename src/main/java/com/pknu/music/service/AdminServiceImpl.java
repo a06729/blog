@@ -51,15 +51,14 @@ public class AdminServiceImpl implements AdminService {
 		boardDto.setBoardNum(boardNum);
 		return adminDao.getBoardContent(boardDto);
 	}
-
+	
+	//글삭제
 	@Override
 	public void boardDelete(HttpServletRequest request) {
 		String[]Checks=request.getParameterValues("boardNum");
 		for(String check:Checks) {
-			System.out.println("ckecknum:"+check);
 			adminDao.boardDelete(check);
-		}
-		
+		}		
 	}
 
 	
