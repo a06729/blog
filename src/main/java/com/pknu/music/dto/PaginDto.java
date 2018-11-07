@@ -9,7 +9,9 @@ public class PaginDto {
     private int total; // 리스트 총 갯수
     private int pageLastNum;
     private boolean lastChk;
-    {
+    private String search;
+
+	{
         pageCnt = 5;
         index = 0;
         pageStartNum = 1;
@@ -57,6 +59,14 @@ public class PaginDto {
     public int getTotal() {
         return total;
     }
+    public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+    
     public void setTotal(int total) {
         this.total = total;
         int remainListCnt = total - listCnt * (pageStartNum - 1);
@@ -80,10 +90,12 @@ public class PaginDto {
     public void setLastChk(boolean lastChk) {
         this.lastChk = lastChk;
     }
-    @Override
-    public String toString() {
-        return "PagingFrontVO [pageCnt=" + pageCnt + ", index=" + index + ", pageStartNum=" + pageStartNum
-                + ", listCnt=" + listCnt + ", total=" + total + ", pageLastNum=" + pageLastNum
-                + ", lastChk=" + lastChk + "]";
-    }
+
+	@Override
+	public String toString() {
+		return "PaginDto [pageCnt=" + pageCnt + ", index=" + index + ", pageStartNum=" + pageStartNum + ", listCnt="
+				+ listCnt + ", total=" + total + ", pageLastNum=" + pageLastNum + ", lastChk=" + lastChk + ", search="
+				+ search + "]";
+	}
+    
 }

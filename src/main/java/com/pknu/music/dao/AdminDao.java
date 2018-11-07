@@ -22,6 +22,10 @@ public interface AdminDao {
 
 	void boardDelete(String check);
 
+	List<BoardDto> searchList(PaginDto paginDto);
+
+	int searchTotal(String search);
+
 
 
 }

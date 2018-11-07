@@ -24,6 +24,28 @@
 <script type="text/javascript" src="<c:url value='../resources/ckeditor/ckeditor.js'/>"></script>
 <script src="/js/paging.js"></script>    
 
+<style> 
+#search{
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/resources/searchicon.png');
+    background-position: right;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search:focus {
+    width: 100%;
+}
+</style>
+
 </head>
 <body>
 	<div class="wrapper">
@@ -78,6 +100,7 @@
 					<option value='15'>15</option>
 					<option value='20'>20</option>
 				</select>
+		
 				<form action="/admin/boardDelete" id="delete" method="post">
 					<input id="deleteBnt" type="button" value="삭제" onclick="clickCheck()">
 					<table class="table table-bordered">
@@ -129,6 +152,9 @@
 					<input type='hidden' name='pageStartNum' id='pageStartNum'
 						value='${p.pageStartNum}'> <input type='hidden'
 						name='listCnt' id='listCnt' value='${p.listCnt}'>
+				</form>
+				<form action="/admin/boardSearch" method="get">
+					<input type="text" id="search" name="search" placeholder="Search..">
 				</form>
 			</div>
 		</div>

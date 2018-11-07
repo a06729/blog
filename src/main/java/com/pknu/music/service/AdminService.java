@@ -21,6 +21,10 @@ public interface AdminService {
 
 	public void boardDelete(HttpServletRequest request);
 
+	public List<BoardDto> searchList(PaginDto paginDto, BoardDto boardDto, String search);
+
+	public int searchTotal(String search);
+
 
 
 }

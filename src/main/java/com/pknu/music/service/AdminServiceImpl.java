@@ -60,8 +60,20 @@ public class AdminServiceImpl implements AdminService {
 			adminDao.boardDelete(check);
 		}		
 	}
-
 	
+	//글 검색
+	@Override
+	public List<BoardDto> searchList(PaginDto paginDto, BoardDto boardDto,String search) {
+		paginDto.setSearch(search);
+		return adminDao.searchList(paginDto);
+	}
+	
+	//검색글 페이징 하기위한 전체 갯수
+	@Override
+	public int searchTotal(String search) {
+		// TODO Auto-generated method stub
+		return adminDao.searchTotal(search);
+	}
 
 	
 }

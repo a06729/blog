@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -142,6 +143,18 @@ public class AdminController {
 	public String boardDelete(HttpServletRequest request) {
 		adminService.boardDelete(request);
 		return "redirect:/admin/adminBoardList";
+	}
+	//게시글 검색
+	@RequestMapping(value="/boardSearch",method=RequestMethod.GET)
+	public String boardSearch(@RequestParam("search") String search,PaginDto paginDto
+							,BoardDto boardDto,Model model) {
+		List<BoardDto>BoardLists=adminService.searchList(paginDto,boardDto,search);
+		paginDto.setTotal(adminService.searchTotal(search));
+		
+		model.addAttribute("lists",BoardLists);
+		model.addAttribute("p",paginDto);
+		
+		return "/admin/adminBoardList";
 	}
 	
 }

@@ -24,6 +24,18 @@
   			where RNUM BETWEEN #{start} AND #{last}
   		</select>
   		
+  		<select id="searchList" parameterType="paginDto" resultType="boardDto">
+  			select *
+  			from( select ROWNUM RNUM,P.* 
+  				  from( select *			
+  				  		from BOARD ORDER BY RELEASEDATE )P)
+  			where RNUM BETWEEN #{start} AND #{last} AND boardtitle like #{search} or boardcontent like '%'||#{search}||'%'
+  		</select>
+  		
+  		<select id="searchTotal" parameterType="String" resultType="int">
+  			select count(*) from board where boardtitle like #{search} or boardcontent like '%'||#{search}||'%'
+  		</select>
+  		
   		<select id="selectTotalPagin" resultType="int">
   			select count(*) from board
   		</select>
