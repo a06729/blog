@@ -25,13 +25,17 @@ public class AdminServiceImpl implements AdminService {
 	
 	//게시판 작성
 	@Override
-	public void insertContent(BoardFileDto boardFileDto, BoardDto boardDto) {
-		
+	public void insertContent(BoardFileDto boardFileDto, BoardDto boardDto,List<BoardFileDto> fileList) {
 		adminDao.insertBoard(boardDto);
+	
+		for(BoardFileDto boardFileList:fileList) {
+			boardFileDto.setBoardNum(boardDto.getBoardNum());
+			boardFileList.setBoardNum(boardFileDto.getBoardNum());
+			System.out.println("boardFileList:"+boardFileList);
+			adminDao.insertBoardFile(boardFileList);
+		}
 		
-		boardFileDto.setBoardNum(boardDto.getBoardNum());
 		
-		adminDao.insertBoardFile(boardFileDto);
 	}
 
 	@Override
@@ -45,7 +49,8 @@ public class AdminServiceImpl implements AdminService {
 		
 		return adminDao.selectTotalPagin();
 	}
-
+	
+	//글 내용 가져오기 및 수정페이지로 글내용 가져오는 기능
 	@Override
 	public List<BoardDto> getBoardContent(int boardNum, BoardDto boardDto) {
 		boardDto.setBoardNum(boardNum);
@@ -75,5 +80,39 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.searchTotal(search);
 	}
 
+	
+	//글 수정
+	@Override
+	public void update(BoardDto boardDto, BoardFileDto boardFileDto,List<BoardFileDto> fileList) {
+		if(!fileList.isEmpty()) {
+			adminDao.update(boardDto);
+			for(BoardFileDto boardFileList:fileList) {
+				boardFileDto.setBoardNum(boardDto.getBoardNum());
+				boardFileList.setBoardNum(boardFileDto.getBoardNum());
+				System.out.println("boardFileList:"+boardFileList);
+				adminDao.updateImage(boardFileList);
+			}
+			fileList.clear();
+		}else {
+			adminDao.update(boardDto);
+		}
+
+		/*if(imageMap.get("fileSize")!=null) {
+			
+			boardFileDto.setFile_Size(String.valueOf(imageMap.get("fileSize")));
+			boardFileDto.setOrignal_File_Name(String.valueOf(imageMap.get("orignalFileName")));
+			boardFileDto.setStored_File_Name(String.valueOf(imageMap.get("filename")));
+			boardFileDto.setFilePath(String.valueOf(imageMap.get("filePath")));
+			boardFileDto.setBoardNum(boardDto.getBoardNum());
+			
+			adminDao.update(boardDto);
+			adminDao.updateImage(boardFileDto);
+		}else {
+			adminDao.update(boardDto);
+		}*/
+	}
+	
+	
+	
 	
 }

@@ -45,9 +45,26 @@
   			from board
   			where BOARDNUM = #{boardNum}
   		</select>
+  		
   		<delete id="boardDelete" parameterType="String">
   			delete
   			from board
   			where BOARDNUM=#{check}
   		</delete>
+  		
+  		<update id="update" parameterType="boardDto">
+  			update BOARD
+  			set BOARDTITLE = #{boardTitle},
+  				BOARDCONTENT = #{boardContent},
+  				RELEASEDATE = #{releaseDate},
+  				USERID =#{userId},
+  				GENRE = #{genre}
+  			where BOARDNUM =#{boardNum}
+  		</update>
+  		
+  		<insert id="updateImage" parameterType="boardFileDto">
+  			insert into
+  			BOARD_FILE(FILENUM,BOARDNUM,ORIGINAL_FILE_NAME,STORED_FILE_NAME,FILE_SIZE,FILEPATH)
+  			values(filenum_seq.nextval,#{boardNum},#{orignal_File_Name},#{stored_File_Name},#{file_Size},#{filePath})
+  		</insert>
   </mapper>

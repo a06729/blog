@@ -26,6 +26,10 @@ public interface AdminDao {
 
 	int searchTotal(String search);
 
+	void update(BoardDto boardDto);
+
+	void updateImage(BoardFileDto boardFileDto);
+
 
 
 }

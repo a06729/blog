@@ -2,6 +2,7 @@ package com.pknu.music.service;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,7 +12,7 @@ import com.pknu.music.dto.PaginDto;
 
 public interface AdminService {
 
-	public void insertContent(BoardFileDto boardFileDto, BoardDto boardDto);
+	public void insertContent(BoardFileDto boardFileDto, BoardDto boardDto, List<BoardFileDto> fileList);
 
 	public List<BoardDto> selectLists(PaginDto paginDto, BoardDto boardDto);
 
@@ -24,6 +25,8 @@ public interface AdminService {
 	public List<BoardDto> searchList(PaginDto paginDto, BoardDto boardDto, String search);
 
 	public int searchTotal(String search);
+
+	public void update(BoardDto boardDto, BoardFileDto boardFileDto, List<BoardFileDto> fileList);
 
 
 
