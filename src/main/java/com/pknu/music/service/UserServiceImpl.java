@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import com.pknu.music.dao.UserDao;
 import com.pknu.music.dto.BoardDto;
 import com.pknu.music.dto.BoardFileDto;
+import com.pknu.music.dto.PaginDto;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -24,12 +25,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public String getContent(BoardDto boardDto,BoardFileDto boardFileDto,Model model) {
-		List<BoardDto>BoardList=userDao.getContent(boardDto);
-		model.addAttribute("BoardList",BoardList);		
-		return "index";
+	public List<BoardDto> selectLists(PaginDto paginDto, BoardDto boardDto) {
+		return userDao.selectBoardLists(paginDto);
 	}
 
+	@Override
+	public int selectTotalPagin() {
+		return userDao.selectTotalPagin();
+	}
+	
 	
 
 }

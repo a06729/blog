@@ -27,15 +27,14 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void insertContent(BoardFileDto boardFileDto, BoardDto boardDto,List<BoardFileDto> fileList) {
 		adminDao.insertBoard(boardDto);
-	
-		for(BoardFileDto boardFileList:fileList) {
-			boardFileDto.setBoardNum(boardDto.getBoardNum());
-			boardFileList.setBoardNum(boardFileDto.getBoardNum());
-			System.out.println("boardFileList:"+boardFileList);
-			adminDao.insertBoardFile(boardFileList);
-		}
-		
-		
+		if(!fileList.isEmpty()){
+			for(BoardFileDto boardFileList:fileList) {
+				boardFileDto.setBoardNum(boardDto.getBoardNum());
+				boardFileList.setBoardNum(boardFileDto.getBoardNum());
+				System.out.println("boardFileList:"+boardFileList);
+				adminDao.insertBoardFile(boardFileList);
+			}
+		}	
 	}
 
 	@Override

@@ -15,7 +15,7 @@ public class PaginDto {
         pageCnt = 5;
         index = 0;
         pageStartNum = 1;
-        listCnt = 5;
+        listCnt = 6;
         pageLastNum = 0;
     }
     public PaginDto() {}

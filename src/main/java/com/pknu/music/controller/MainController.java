@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pknu.music.dto.BoardDto;
 import com.pknu.music.dto.BoardFileDto;
+import com.pknu.music.dto.PaginDto;
 import com.pknu.music.security.ShaEncoder;
 import com.pknu.music.service.UserService;
 
@@ -31,10 +32,14 @@ public class MainController {
 	UserService userService;
 	
 	//메인 페이지 이동
-	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String home(BoardDto boardDto,BoardFileDto boardFileDto,Model model) {
-		return userService.getContent(boardDto,boardFileDto,model);
-//		return "index";
+	@RequestMapping(value="/",method= {RequestMethod.GET,RequestMethod.POST})
+	public String home(BoardDto boardDto,PaginDto paginDto,BoardFileDto boardFileDto,Model model) {
+		List<BoardDto>BoardLists=userService.selectLists(paginDto,boardDto);
+		paginDto.setTotal(userService.selectTotalPagin());
+		
+		model.addAttribute("lists",BoardLists);
+		model.addAttribute("p",paginDto);
+		return "index";
 	}
 	//로그인 페이지 이동
 	@RequestMapping(value="/loginPage",method=RequestMethod.GET)

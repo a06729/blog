@@ -3,6 +3,8 @@ package com.pknu.music.controller;
 import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,7 +55,7 @@ public class AdminController {
 	@RequestMapping(value="/insertContent")
 	public void insertContent(Principal principal,BoardFileDto boardFileDto,BoardDto boardDto) {
 		boardDto.setUserId(principal.getName());
-
+	
 		System.out.println("getFilePath:"+boardFileDto.getFilePath());
 		
 		adminService.insertContent(boardFileDto,boardDto,fileList);

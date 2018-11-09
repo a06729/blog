@@ -7,17 +7,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.pknu.music.dto.BoardDto;
 import com.pknu.music.dto.BoardFileDto;
+import com.pknu.music.dto.PaginDto;
 
 public interface UserDao {
 
 	public void insertUser(Map<String, String> paramMap);
 
-	public UserDetails selectUser(String username);
+	public List<BoardDto> selectBoardLists(PaginDto paginDto);
 
-	public void selectContent(BoardDto boardDto);
-
-	public List<BoardDto> getContent(BoardDto boardDto);
-
-	public List<BoardFileDto> getContentFile(BoardDto boardDto);
+	public int selectTotalPagin();
 
 }

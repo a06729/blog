@@ -9,13 +9,26 @@
 	
 	<select id="getContent" parameterType="boardDto" resultType="boardDto">
 		<![CDATA[
-			select BOARDNUM,BOARDTITLE,FILEPATH
+			select *
 			from(
-				select BOARDNUM,BOARDTITLE,FILEPATH
+				select *
 				from BOARD natural join BOARD_FILE
 				order by RELEASEDATE DESC
 			)where ROWNUM <=10 
 		]]>
+	</select>
+	
+	<select id="selectBoardLists" parameterType="paginDto" resultType="boardDto">
+		  	select *
+  			from( select ROWNUM RNUM,P.* 
+  				  from( select *			
+  				  		from BOARD natural join BOARD_FILE 
+  				  		ORDER BY RELEASEDATE DESC )P)
+  			where RNUM BETWEEN #{start} AND #{last}
+	</select>
+	
+	<select id="selectTotalPagin" resultType="int">
+		select count(*) from board
 	</select>
 	
 </mapper>
