@@ -53,7 +53,7 @@
     <header class="s-header header">
 
         <div class="header__logo">
-            <a class="logo" href="index.html">
+            <a class="logo" href="/">
                 <img src="../temsource/images/logo.svg" alt="Homepage">
             </a>
         </div> <!-- end header__logo -->
@@ -122,16 +122,17 @@
 
                 <div class="featured-slider featured" data-aos="zoom-in">
 					
-	                 <c:forEach var="Board" items="${lists}" end="3">
+	                 <c:forEach var="Board" items="${lists}" begin="0" end="2" varStatus="status">
 	                    <div class="featured__slide">
 	                        <div class="entry">
-								
-	                            <div class="entry__background" style="background-image:url('${Board.filePath}');"></div>
+	                            <div class="entry__background" style="background-image:url('${Board.filePath}');">
+	                            	<a href="/contentPage/${Board.boardNum}" title=""></a>
+	                            </div>
 	                        
 	                            <div class="entry__content">
 	                                <span class="entry__category"><a href="#0">${Board.genre}</a></span>
 	
-	                                <h1><a href="#0" title="">${Board.boardTitle}</a></h1>
+	                                <h1><a href="/contentPage/${Board.boardNum}" title="">${Board.boardTitle}</a></h1>
 	
 	                                <div class="entry__info" style="text-align: center;">
 	                                    <ul class="entry__meta">
@@ -142,11 +143,11 @@
 	                            </div> <!-- end entry__content -->
 	                            
 	                        </div> <!-- end entry -->
-	                    
+	                    	
 	                    </div> <!-- end featured__slide -->
-	                
-                    </c:forEach>
-                    
+	                    </c:forEach>
+	                 
+   
                 </div> <!-- end featured -->
 
             </div> <!-- end col-full -->
@@ -165,7 +166,7 @@
 	                    
 	                    <div class="item-entry" data-aos="zoom-in">
 	                        <div class="item-entry__thumb">
-	                            <a href="single-standard.html" class="item-entry__thumb-link">
+	                            <a href="/contentPage/${Board.boardNum}" class="item-entry__thumb-link">
 	                                <img src="${Board.filePath}" style="width: 400px; height: 200px;">
 	                            </a>
 	                        </div>
@@ -175,7 +176,7 @@
 	                                <a href="category.html">${Board.genre}</a> 
 	                            </div>
 	    
-	                            <h1 class="item-entry__title"><a href="single-standard.html">${Board.boardTitle}</a></h1>
+	                            <h1 class="item-entry__title"><a href="/contentPage/${Board.boardNum}">${Board.boardTitle}</a></h1>
 	                                
 	                            <div class="item-entry__date">
 	                                <a href="single-standard.html">${Board.releaseDate}</a>

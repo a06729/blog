@@ -34,6 +34,11 @@ public class UserServiceImpl implements UserService {
 		return userDao.selectTotalPagin();
 	}
 	
+	@Override
+	public List<BoardDto> getContent(int boardNum, BoardDto boardDto) {
+		boardDto.setBoardNum(boardNum);
+		return userDao.getContent(boardDto);
+	}
 	
 
 }

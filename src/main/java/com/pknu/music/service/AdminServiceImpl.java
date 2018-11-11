@@ -34,6 +34,7 @@ public class AdminServiceImpl implements AdminService {
 				System.out.println("boardFileList:"+boardFileList);
 				adminDao.insertBoardFile(boardFileList);
 			}
+			fileList.clear();
 		}	
 	}
 

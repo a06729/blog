@@ -17,4 +17,6 @@ public interface UserDao {
 
 	public int selectTotalPagin();
 
+	public List<BoardDto> getContent(BoardDto boardDto);
+
 }

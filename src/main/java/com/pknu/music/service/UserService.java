@@ -17,6 +17,7 @@ public interface UserService {
 
 	int selectTotalPagin();
 
-//	void getContent(BoardDto boardDto);
+	List<BoardDto> getContent(int boardNum, BoardDto boardDto);
+
 
 }
