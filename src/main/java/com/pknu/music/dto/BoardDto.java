@@ -12,6 +12,7 @@ public class BoardDto {
 	private String genre;
 	private Date regDate;
 	private String filePath;
+	private String country;
 	public int getBoardNum() {
 		return boardNum;
 	}
@@ -60,14 +61,19 @@ public class BoardDto {
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
 	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
 	@Override
 	public String toString() {
 		return "BoardDto [boardNum=" + boardNum + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
 				+ ", releaseDate=" + releaseDate + ", userId=" + userId + ", genre=" + genre + ", regDate=" + regDate
-				+ ", filePath=" + filePath + "]";
+				+ ", filePath=" + filePath + ", country=" + country + "]";
 	}
-	
-	
 	
 	
 	

@@ -10,7 +10,6 @@ public class PaginDto {
     private int pageLastNum;
     private boolean lastChk;
     private String search;
-
 	{
         pageCnt = 5;
         index = 0;
@@ -67,7 +66,7 @@ public class PaginDto {
 		this.search = search;
 	}
     
-    public void setTotal(int total) {
+	public void setTotal(int total) {
         this.total = total;
         int remainListCnt = total - listCnt * (pageStartNum - 1);
         int remainPageCnt = remainListCnt / listCnt;
@@ -97,5 +96,7 @@ public class PaginDto {
 				+ listCnt + ", total=" + total + ", pageLastNum=" + pageLastNum + ", lastChk=" + lastChk + ", search="
 				+ search + "]";
 	}
+
+    
     
 }

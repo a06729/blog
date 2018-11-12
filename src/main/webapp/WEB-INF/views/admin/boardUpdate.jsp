@@ -81,21 +81,29 @@
 				<form action="/admin/update" method="post">
 					<c:forEach var="items" items="${boardList}">
 						<input name="boardNum" type="hidden" value="${items.boardNum}">
-						<input type="text" name="boardTitle" placeholder="제목" value="${items.boardTitle}">
-						<input type="date" name="releaseDate" value="${items.releaseDate}">
-						<select name="genre">
-							<option value="${items.genre}" disabled="${items.genre}">장르선택</option>
-							<option value="dance">Dance</option>
-							<option value="ballad">Ballad</option>
-							<option value="rb-soul">R&B / Soul</option>
-							<option value="rap-hip-hop">Rap / Hip-hop</option>
-							<option value="electronica">Electronica</option>
-							<option value="ost">OST</option>
-							<option value="folk">Folk</option>
-							<option value="jazz">Jazz</option>
-							<option value="pop">Pop</option>
-							<option value="rock">Rock</option>
-						</select>
+						<p>제목:&nbsp;&nbsp;<input type="text" name="boardTitle" placeholder="제목" value="${items.boardTitle}">
+						      출시일:&nbsp;&nbsp;<input type="date" name="releaseDate" value="${items.releaseDate}">
+						      장르:&nbsp;&nbsp;<select name="genre">
+												<option value="${items.genre}" disabled="${items.genre}">장르선택</option>
+												<option value="Dance">Dance</option>
+												<option value="Ballad">Ballad</option>
+												<option value="R&B / Soul">R&B / Soul</option>
+												<option value="Rap / Hip-hop">Rap / Hip-hop</option>
+												<option value="Electronica">Electronica</option>
+												<option value="OST">OST</option>
+												<option value="Folk">Folk</option>
+												<option value="Jazz">Jazz</option>
+												<option value="Pop">Pop</option>
+												<option value="Rock">Rock</option>
+											</select>
+						      국가:&nbsp;&nbsp;<select name="country">
+												<option value="${items.country}" disabled="${items.country}">국가선택</option>
+												<option value="KOREA">KOREA</option>
+												<option value="US-UK">US-UK</option>
+												<option value="JAPAN">JAPAN</option>
+												<option value="CHINA-TW-HK">CHINA-TW-HK</option>
+						    				</select>
+						</p>
 						<textarea id="ckeditor" name="boardContent">${items.boardContent}</textarea>
 						<input type="hidden"name="${_csrf.parameterName}" value="${_csrf.token}"/>
 						<input type="submit" value="수정">

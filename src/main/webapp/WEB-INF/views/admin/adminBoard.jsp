@@ -79,21 +79,29 @@
 			</nav>
 			<div>
 				<form action="/admin/insertContent" method="post">
-					<input type="text" name="boardTitle" placeholder="제목">
-					<input type="date" name="releaseDate">
-					<select name="genre">
-						<option value="">장르선택</option>
-						<option value="dance">Dance</option>
-						<option value="ballad">Ballad</option>
-						<option value="rb-soul">R&B / Soul</option>
-						<option value="rap-hip-hop">Rap / Hip-hop</option>
-						<option value="electronica">Electronica</option>
-						<option value="ost">OST</option>
-						<option value="folk">Folk</option>
-						<option value="jazz">Jazz</option>
-						<option value="pop">Pop</option>
-						<option value="rock">Rock</option>
-					</select>
+					<p>제목:&nbsp;&nbsp;<input type="text" name="boardTitle" placeholder="제목">
+					      출시일:&nbsp;&nbsp;<input type="date" name="releaseDate">
+					      장르:&nbsp;&nbsp;<select name="genre">
+								<option value="">장르선택</option>
+								<option value="Dance">Dance</option>
+								<option value="Ballad">Ballad</option>
+								<option value="R&B / Soul">R&B / Soul</option>
+								<option value="Rap / Hip-hop">Rap / Hip-hop</option>
+								<option value="Electronica">Electronica</option>
+								<option value="OST">OST</option>
+								<option value="Folk">Folk</option>
+								<option value="Jazz">Jazz</option>
+								<option value="Pop">Pop</option>
+								<option value="Rock">Rock</option>
+						    </select>
+					국가:&nbsp;&nbsp;<select name="country">
+								<option value="">국가선택</option>
+								<option value="KOREA">KOREA</option>
+								<option value="US-UK">US-UK</option>
+								<option value="JAPAN">JAPAN</option>
+								<option value="CHINA-TW-HK">CHINA-TW-HK</option>
+						    </select>
+						</p>
 					<textarea id="ckeditor" name="boardContent"></textarea>
 					<input type="hidden"name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<input type="submit" value="작성">
@@ -121,13 +129,14 @@
 		$(function() {
 			CKEDITOR.replace('ckeditor',{
 				height:260,
-				width:700,
+				width:1000,
 				filebrowserImageUploadUrl : '/admin/imageUpload?type=image'
 				
 			});
 			CKEDITOR.editorConfig = function( config ) {
 			    config.language = 'es';
 			    config.uiColor = '#F7B42C';
+			    config.width=1000;
 			    config.height = 300;
 			    config.toolbarCanCollapse = true;
 			};

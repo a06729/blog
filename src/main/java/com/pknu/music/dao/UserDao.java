@@ -19,4 +19,12 @@ public interface UserDao {
 
 	public List<BoardDto> getContent(BoardDto boardDto);
 
+	public List<BoardDto> searchList(PaginDto paginDto);
+
+	public int searchTotal(String s);
+
+	public List<BoardDto> categoryList(Map<String, Object> categoryMap);
+
+	public int categoryTotal(BoardDto boardDto);
+
 }

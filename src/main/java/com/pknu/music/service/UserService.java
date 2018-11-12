@@ -19,5 +19,13 @@ public interface UserService {
 
 	List<BoardDto> getContent(int boardNum, BoardDto boardDto);
 
+	List<BoardDto> searchList(String s, PaginDto paginDto, BoardDto boardDto);
+
+	int searchTotal(String s);
+
+	List<BoardDto> categoryList(PaginDto paginDto, BoardDto boardDto);
+
+	int categoryTotal(BoardDto boardDto);
+
 
 }

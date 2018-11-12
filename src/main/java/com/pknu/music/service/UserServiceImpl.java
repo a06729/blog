@@ -1,6 +1,7 @@
 package com.pknu.music.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -39,6 +40,34 @@ public class UserServiceImpl implements UserService {
 		boardDto.setBoardNum(boardNum);
 		return userDao.getContent(boardDto);
 	}
+
+	@Override
+	public List<BoardDto> searchList(String s, PaginDto paginDto, BoardDto boardDto) {
+		paginDto.setSearch(s);
+		return userDao.searchList(paginDto);
+	}
+
+	@Override
+	public int searchTotal(String s) {
+		return userDao.searchTotal(s);
+	}
+
+	@Override
+	public List<BoardDto> categoryList(PaginDto paginDto, BoardDto boardDto) {
+		Map<String,Object>categoryMap=new HashMap<String, Object>();
+		categoryMap.put("pagin",paginDto);
+		categoryMap.put("boardDto",boardDto);
+		
+		System.out.println();
+		
+		return userDao.categoryList(categoryMap);
+	}
+
+	@Override
+	public int categoryTotal(BoardDto boardDto) {
+		return userDao.categoryTotal(boardDto);
+	}
+	
 	
 
 }
