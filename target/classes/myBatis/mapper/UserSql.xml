@@ -42,21 +42,13 @@
 	    WHERE RNUM BETWEEN #{start} AND #{last} AND BOARDTITLE like #{search} or BOARDCONTENT like '%'||#{search}||'%'
 	</select>
 	
-	<select id="categoryTotal" parameterType="boardDto" resultType="int">
+	<select id="genreTotal" parameterType="boardDto" resultType="int">
 		SELECT count(*) 
 		FROM BOARD 
-		<choose>
-			<when test="#{genre}!=null">
-				WHERE GENRE like '%'|| #{genre} ||'%'
-			</when>
-			<when test="#{country}!=null">
-				WHERE COUNTRY like '%'|| #{country} ||'%'
-			</when>
-		</choose>
-		
+		WHERE GENRE like '%'|| #{genre} ||'%'
 	</select>
 	
-	<select id="categoryList" parameterType="map" resultType="boardDto">
+	<select id="genreList" parameterType="map" resultType="boardDto">
 		SELECT *
 		FROM(SELECT ROWNUM RNUM,P.*
 			 FROM(SELECT *
@@ -64,15 +56,24 @@
 			      ORDER BY RELEASEDATE DESC)P
 			      WHERE ROWID IN(SELECT MAX(ROWID)
 			                     FROM BOARD_FILE GROUP BY BOARDNUM))
-		<choose>
-			<when test="#{boardDto.genre}!=null">
-				WHERE RNUM BETWEEN #{pagin.start} AND #{pagin.last} AND GENRE like '%'||#{boardDto.genre}||'%'
-			</when>
-			<when test="#{boardDto.country}!=null">
-				WHERE RNUM BETWEEN #{pagin.start} AND #{pagin.last} AND COUNTRY like '%'||#{boardDto.country}||'%'
-			</when>
-		</choose>
-	   
+	   WHERE RNUM BETWEEN #{pagin.start} AND #{pagin.last} AND GENRE like '%'||#{boardDto.genre}||'%'   
+	</select>
+	
+	<select id="countryTotal" parameterType="boardDto" resultType="int">
+		SELECT count(*)
+		FROM BOARD
+		WHERE COUNTRY like '%'|| #{country} ||'%'
+	</select>
+	
+	<select id="countryList" parameterType="map" resultType="boardDto">
+		SELECT *
+		FROM(SELECT ROWNUM RNUM,P.*
+			 FROM(SELECT *
+			      FROM BOARD natural join BOARD_FILE
+			      ORDER BY RELEASEDATE DESC)P
+			      WHERE ROWID IN(SELECT MAX(ROWID)
+			                     FROM BOARD_FILE GROUP BY BOARDNUM))
+	   WHERE RNUM BETWEEN #{pagin.start} AND #{pagin.last} AND COUNTRY like '%'||#{boardDto.country}||'%'
 	</select>
 	
 </mapper>

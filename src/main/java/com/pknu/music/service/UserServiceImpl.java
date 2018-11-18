@@ -53,20 +53,37 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<BoardDto> categoryList(PaginDto paginDto, BoardDto boardDto) {
-		Map<String,Object>categoryMap=new HashMap<String, Object>();
-		categoryMap.put("pagin",paginDto);
-		categoryMap.put("boardDto",boardDto);
+	public List<BoardDto> genreList(PaginDto paginDto, BoardDto boardDto) {
+		Map<String,Object>genreMap=new HashMap<String, Object>();
+		genreMap.put("pagin",paginDto);
+		genreMap.put("boardDto",boardDto);
 		
 		System.out.println();
 		
-		return userDao.categoryList(categoryMap);
+		return userDao.genreList(genreMap);
 	}
 
 	@Override
-	public int categoryTotal(BoardDto boardDto) {
-		return userDao.categoryTotal(boardDto);
+	public int genreTotal(BoardDto boardDto) {
+		return userDao.genreTotal(boardDto);
 	}
+
+	@Override
+	public List<BoardDto> countryList(PaginDto paginDto, BoardDto boardDto) {
+		Map<String,Object>countryMap=new HashMap<String,Object>();
+		countryMap.put("pagin",paginDto);
+		countryMap.put("boardDto",boardDto);
+		
+		return userDao.countryList(countryMap);
+	}
+
+	@Override
+	public int countryTotal(BoardDto boardDto) {
+		return userDao.countryTotal(boardDto);
+	}
+	
+	
+	
 	
 	
 

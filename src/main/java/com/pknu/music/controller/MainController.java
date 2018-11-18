@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.pknu.music.dto.BoardDto;
 import com.pknu.music.dto.BoardFileDto;
 import com.pknu.music.dto.PaginDto;
@@ -67,38 +68,49 @@ public class MainController {
 	@RequestMapping(value="/contentPage/{boardNum}")
 	public String contentPage(@PathVariable int boardNum,BoardDto boardDto,Model model) {
 		List<BoardDto>boardList=userService.getContent(boardNum,boardDto);
-
+		
 		model.addAttribute("boardList",boardList);
 		return "contentPage";
 	}
 	
 	//검색결과페이지
-	@RequestMapping(value="/search",method=RequestMethod.GET)
+	@RequestMapping(value="/search",method={RequestMethod.GET,RequestMethod.POST})
 	public String search(@RequestParam("s")String s,PaginDto paginDto,BoardDto boardDto,Model model) {
 		List<BoardDto>boardList=userService.searchList(s,paginDto,boardDto);		
 		paginDto.setTotal(userService.searchTotal(s));
 		
+		model.addAttribute("search",s);
 		model.addAttribute("boardList",boardList);
 		model.addAttribute("p",paginDto);
 		return "searchPage";
 	}
-	
-	@RequestMapping(value="/category",method=RequestMethod.GET)
-	public String category(PaginDto paginDto,BoardDto boardDto,Model model) {
-		List<BoardDto>categoryList=userService.categoryList(paginDto,boardDto);
-		paginDto.setTotal(userService.categoryTotal(boardDto));
+	//장르 검색
+	@RequestMapping(value="/category/genre/{genre}",method={RequestMethod.GET,RequestMethod.POST})
+	public String category(@PathVariable String genre,PaginDto paginDto,BoardDto boardDto,Model model) {
+		boardDto.setGenre(genre);
 		
-		System.out.println("boardDto.genre+"+boardDto.getGenre());
-		System.out.println("boardDto.COUNTRY+"+boardDto.getCountry());
+		List<BoardDto>genreList=userService.genreList(paginDto,boardDto);
+		paginDto.setTotal(userService.genreTotal(boardDto));
 		
-		System.out.println("categoryList:"+categoryList);
-		System.out.println("paginDtoTotal:"+paginDto.getTotal());
-		
-		model.addAttribute("categoryList",categoryList);
+		model.addAttribute("category",boardDto.getGenre());
+		model.addAttribute("categoryList",genreList);
 		model.addAttribute("p",paginDto);
-		return "categoryPage";
+		return "genrePage";
 	}
-	
+	//나라로 검색
+	@RequestMapping(value="/category/country/{country}",method={RequestMethod.GET,RequestMethod.POST})
+	public String country(@PathVariable String country,PaginDto paginDto,BoardDto boardDto,Model model) {
+		boardDto.setCountry(country);
+		
+		List<BoardDto>countryList=userService.countryList(paginDto,boardDto);
+		paginDto.setTotal(userService.countryTotal(boardDto));
+		
+		model.addAttribute("country",country);
+		model.addAttribute("countryList",countryList);
+		model.addAttribute("p",paginDto);
+		
+		return "countryPage";
+	}
 	//회원가입 로직
 	@RequestMapping(value="/insertUser")
 	public String insertUser(@RequestParam("id")String id,

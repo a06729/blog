@@ -15,7 +15,7 @@
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+	<link href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean" rel="stylesheet">
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="./temsource/css/base.css">
@@ -55,6 +55,7 @@
     	<c:when test="${!empty boardList}">
 			<section class="s-content" style="padding-top: 10rem;">
 		        <div class="row entries-wrap wide">
+		        	<p style="font-family:'Jua',sans-serif;text-align: center;">SEARCH RESULTS FOR:${search}</p>
 		            <div class="entries">
 						<c:forEach var="Board" items="${boardList}">
 			                <article class="col-block">
@@ -68,7 +69,18 @@
 			        
 			                        <div class="item-entry__text">    
 			                            <div class="item-entry__cat">
-			                                <a href="category.html">${Board.genre}</a> 
+			                        		<c:choose>
+			                                	<c:when test="${'Rap-Hip-hop' eq Board.genre }">
+			                                		<a href="/category/country/${Board.genre}">Rap/Hip-hop</a>
+			                                	</c:when>
+			                                	<c:when test="${'R&B-Soul' eq Board.genre }">
+			                                		<a href="/category/country/${Board.genre}">R&B/Soul</a>
+			                                	</c:when>
+			                                	<c:when test="${'Rap-Hip-hop' ne Board.genre && 'R&B-Soul' ne Board.genre}">
+			                                		<a href="/category/country/${Board.genre}">${Board.genre}</a>
+			                                	</c:when>
+			                                </c:choose>
+
 			                            </div>
 			    
 			                            <h1 class="item-entry__title"><a href="/contentPage/${Board.boardNum}">${Board.boardTitle}</a></h1>

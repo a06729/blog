@@ -23,8 +23,13 @@ public interface UserDao {
 
 	public int searchTotal(String s);
 
-	public List<BoardDto> categoryList(Map<String, Object> categoryMap);
+	public List<BoardDto> genreList(Map<String, Object> genreMap);
 
-	public int categoryTotal(BoardDto boardDto);
+	public int genreTotal(BoardDto boardDto);
+
+	public List<BoardDto> countryList(Map<String, Object> countryMap);
+
+	public int countryTotal(BoardDto boardDto);
+
 
 }

@@ -7,7 +7,7 @@
 
         <div class="header__logo">
             <a class="logo" href="/">
-                <img src="../temsource/images/logo.svg" alt="Homepage">
+                <img src="/temsource/images/logo.svg" alt="Homepage">
             </a>
         </div> <!-- end header__logo -->
 
@@ -36,25 +36,25 @@
                 <li class="has-children">
                     <a href="#0" title="">Country</a>
                     <ul class="sub-menu">
-                        <li><a href="/category?country=KOREA">KOREA</a></li>
-                        <li><a href="/category?country=US-UK">US-UK</a></li>
-                        <li><a href="/category?country=JAPAN">JAPAN</a></li>
-                        <li><a href="/category?country=CHINA-TW-HK">CHINA-TW-HK</a></li>
+                        <li><a href="/category/country/KOREA">KOREA</a></li>
+                        <li><a href="/category/country/US-UK">US-UK</a></li>
+                        <li><a href="/category/country/JAPAN">JAPAN</a></li>
+                        <li><a href="/category/country/CHINA-TW-HK">CHINA-TW-HK</a></li>
                     </ul>
                 </li>
                 <li class="has-children">
                     <a href="#0" title="">GENRE</a>
                     <ul class="sub-menu">
-                        <li><a href="/category?genre=Dance">Dance</a></li>
-                        <li><a href="/category?genre=Ballad">Ballad</a></li>
-                        <li><a href="/category?genre=R&B / Soul">R&B / Soul</a></li>
-                        <li><a href="/category?genre=Rap / Hip-hop">Rap / Hip-hop</a></li>
-                        <li><a href="/category?genre=Electronica">Electronica</a></li>
-                        <li><a href="/category?genre=OST">OST</a></li>
-                        <li><a href="/category?genre=Folk">Folk</a></li>
-                        <li><a href="/category?genre=Jazz">Jazz</a></li>
-                        <li><a href="/category?genre=Pop">Pop</a></li>
-                        <li><a href="/category?genre=Rock">Rock</a></li>
+                        <li><a href="/category/genre/Dance">Dance</a></li>
+                        <li><a href="/category/genre/Ballad">Ballad</a></li>
+                        <li><a href="/category/genre/R&B-Soul">R&B / Soul</a></li>
+                        <li><a href="/category/genre/Rap-Hip-hop">Rap / Hip-hop</a></li>
+                        <li><a href="/category/genre/Electronica">Electronica</a></li>
+                        <li><a href="/category/genre/OST">OST</a></li>
+                        <li><a href="/category/genre/Folk">Folk</a></li>
+                        <li><a href="/category/genre/Jazz">Jazz</a></li>
+                        <li><a href="/category/genre/Pop">Pop</a></li>
+                        <li><a href="/category/genre/Rock">Rock</a></li>
                     </ul>
                 </li>
                 <c:if test="${!empty pageContext.request.userPrincipal.name}">

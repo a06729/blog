@@ -87,8 +87,8 @@
 												<option value="${items.genre}" disabled="${items.genre}">장르선택</option>
 												<option value="Dance">Dance</option>
 												<option value="Ballad">Ballad</option>
-												<option value="R&B / Soul">R&B / Soul</option>
-												<option value="Rap / Hip-hop">Rap / Hip-hop</option>
+												<option value="R&B-Soul">R&B / Soul</option>
+												<option value="Rap-Hip-hop">Rap / Hip-hop</option>
 												<option value="Electronica">Electronica</option>
 												<option value="OST">OST</option>
 												<option value="Folk">Folk</option>

@@ -65,8 +65,18 @@
 	                            </div>
 	                        
 	                            <div class="entry__content">
-	                                <span class="entry__category"><a href="#0">${Board.genre}</a></span>
-	
+	                                <c:choose>
+	                                	<c:when test="${'Rap-Hip-hop' eq Board.genre }">
+	                                		<span class="entry__category"><a href="/category/genre/${Board.genre}">Rap/Hip-hop</a></span>
+	                                	</c:when>
+	                                	<c:when test="${'R&B-Soul' eq Board.genre }">
+	                                		<span class="entry__category"><a href="/category/genre/${Board.genre}">R&B/Soul</a></span>
+	                                	</c:when>
+	                                	<c:when test="${'Rap-Hip-hop' ne Board.genre && 'R&B-Soul' ne Board.genre}">
+	                                		<span class="entry__category"><a href="/category/genre/${Board.genre}">${Board.genre}</a></span>
+	                                	</c:when>
+	                                </c:choose>
+	                           
 	                                <h1><a href="/contentPage/${Board.boardNum}" title="">${Board.boardTitle}</a></h1>
 	
 	                                <div class="entry__info" style="text-align: center;">
@@ -108,7 +118,17 @@
 	        
 	                        <div class="item-entry__text">    
 	                            <div class="item-entry__cat">
-	                                <a href="category.html">${Board.genre}</a> 
+	                               <c:choose>
+	                                	<c:when test="${'Rap-Hip-hop' eq Board.genre }">
+	                                		<a href="/category/genre/${Board.genre}">Rap/Hip-hop</a>
+	                                	</c:when>
+	                                	<c:when test="${'R&B-Soul' eq Board.genre }">
+	                                		<a href="/category/genre/${Board.genre}">R&B/Soul</a>
+	                                	</c:when>
+	                                	<c:when test="${'Rap-Hip-hop' ne Board.genre && 'R&B-Soul' ne Board.genre}">
+	                                		<a href="/category/genre/${Board.genre}">${Board.genre}</a>
+	                                	</c:when>
+	                                </c:choose>
 	                            </div>
 	    
 	                            <h1 class="item-entry__title"><a href="/contentPage/${Board.boardNum}">${Board.boardTitle}</a></h1>

@@ -85,8 +85,8 @@
 								<option value="">장르선택</option>
 								<option value="Dance">Dance</option>
 								<option value="Ballad">Ballad</option>
-								<option value="R&B / Soul">R&B / Soul</option>
-								<option value="Rap / Hip-hop">Rap / Hip-hop</option>
+								<option value="R&B-Soul">R&B / Soul</option>
+								<option value="Rap-Hip-hop">Rap / Hip-hop</option>
 								<option value="Electronica">Electronica</option>
 								<option value="OST">OST</option>
 								<option value="Folk">Folk</option>
@@ -102,7 +102,46 @@
 								<option value="CHINA-TW-HK">CHINA-TW-HK</option>
 						    </select>
 						</p>
-					<textarea id="ckeditor" name="boardContent"></textarea>
+					<textarea id="ckeditor" name="boardContent">
+						<p>식스밤 &ndash; 그대 동네<br />
+						Release Date: 2018.11.08<br />
+						Genre: Ballad<br />
+						Language: Korean<br />
+						Bit Rate: MP3-320kbps</p>
+						
+						<p>&nbsp;</p>
+						
+						<p>Track List:<br />
+						01. 그대 동네</p>
+						
+						<p><strong>Download Album</strong></p>
+						
+						<p>File: Six Bomb &ndash; 그대 동네 [www.k2nblog.com].rar<br />
+						Size: 10.8 MB<br />
+						Hosted: MediaFire, 4Shared, Mega.co.nz, ZippyShare, PutLocker, Uploaded.to</p>
+						
+						<p>Download:</p>
+						
+						<p>Listen online &amp; individual tracks:</p>
+						
+						<p><img alt="Mirrored.logo" src="/resources/img/Mirrored.logo.png" style="height:74px; width:309px" /></p>
+						
+						<p><a href="" target="_blank"><span style="color:#2ecc71">ADF.LY</span></a>&nbsp;|&nbsp;<a href="" target="_blank"><span style="color:#2ecc71">LINKSHRINK</span></a></p>
+						
+						<p><img alt="" src="/resources/img/mediafire.png" style="height:60px; width:321px" /></p>
+						
+						<p><a href="" target="_blank"><span style="color:#2ecc71">ADF.LY</span></a>&nbsp;|&nbsp;<a href="" target="_blank"><span style="color:#2ecc71">LINKSHRINK</span></a></p>
+						
+						<p><img alt="" src="/resources/img/MEGAlogo.png" style="height:50px; width:180px" /></p>
+						
+						<p><a href="" target="_blank"><span style="color:#2ecc71">ADF.LY</span></a>&nbsp;|&nbsp;<a href="" target="_blank"><span style="color:#2ecc71">LINKSHRINK</span></a></p>
+						
+						<p><img alt="" src="/resources/img/4shared.gif" style="height:67px; width:190px" /></p>
+						
+						<p><a href="" target="_blank"><span style="color:#2ecc71">ADF.LY</span></a>&nbsp;|&nbsp;<a href="" target="_blank"><span style="color:#2ecc71">LINKSHRINK</span></a></p>
+												
+						<p>&nbsp;</p>	
+					</textarea>
 					<input type="hidden"name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<input type="submit" value="작성">
 				</form>
@@ -132,13 +171,32 @@
 				width:1000,
 				filebrowserImageUploadUrl : '/admin/imageUpload?type=image'
 				
+
 			});
 			CKEDITOR.editorConfig = function( config ) {
-			    config.language = 'es';
+			    config.language = 'ko';
 			    config.uiColor = '#F7B42C';
 			    config.width=1000;
 			    config.height = 300;
 			    config.toolbarCanCollapse = true;
+				config.toolbar = [
+					{ name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
+					{ name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+					{ name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+					{ name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+					'/',
+					{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+					{ name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+					{ name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+					{ name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+					'/',
+					{ name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+					{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+					{ name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+					{ name: 'about', items: [ 'About' ] }
+				];
+				config.removeButtons = 'Save';
+				
 			};
 			
 			window.parent.CKEDITOR.tools.callFunction({"filename" :'${filename}', "uploaded" : 1, "url":'${url}'});

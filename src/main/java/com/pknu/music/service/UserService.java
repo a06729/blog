@@ -23,9 +23,13 @@ public interface UserService {
 
 	int searchTotal(String s);
 
-	List<BoardDto> categoryList(PaginDto paginDto, BoardDto boardDto);
+	List<BoardDto> genreList(PaginDto paginDto, BoardDto boardDto);
 
-	int categoryTotal(BoardDto boardDto);
+	int genreTotal(BoardDto boardDto);
+
+	List<BoardDto> countryList(PaginDto paginDto, BoardDto boardDto);
+
+	int countryTotal(BoardDto boardDto);
 
 
 }
